@@ -1,10 +1,28 @@
-# Sona for Stream Deck
+<img src="uk.coredev.sona.sdPlugin/imgs/plugin/icon@2x.png" alt="" width="100" align="left">
+
+### Sona for Stream Deck
+
+[![Latest release](https://img.shields.io/github/v/release/coredev-uk/sona-streamdeck?include_prereleases)](https://github.com/coredev-uk/sona-streamdeck/releases)
+[![CI](https://img.shields.io/github/actions/workflow/status/coredev-uk/sona-streamdeck/ci.yml?branch=main)](https://github.com/coredev-uk/sona-streamdeck/actions/workflows/ci.yml)
+[![Stream Deck 7.1+](https://img.shields.io/badge/stream%20deck-7.1%2B-1F1F1F)](https://www.elgato.com/stream-deck)
 
 Control [Sona](https://sona.coredev.uk), the Apple Music desktop client, from an Elgato Stream Deck. The keys show what Sona is doing and update the moment it changes.
+
+[Download](https://github.com/coredev-uk/sona-streamdeck/releases) •
+[Actions](#what-it-does) •
+[Install](#install) •
+[Sona](https://github.com/coredev-uk/sona-go)
+
+<br clear="left">
+
+<img src="assets/hero.svg" alt="A Stream Deck laid out with Sona's keys: previous, play, next, shuffle and repeat; favourite, suggest less, add to library, play collection and crossfade; volume down, volume up, spatial audio, private listening and clear queue." width="640">
 
 > **Status: early.** Every action is tested against a running Sona through a stand-in for the Stream Deck app (`scripts/smoke.ts`). The plugin has not yet been tried on a physical Stream Deck. If something looks or behaves wrong, [open an issue](https://github.com/coredev-uk/sona-streamdeck/issues).
 
 ## What it does
+
+<details>
+<summary>Every key and dial</summary>
 
 | Action | Press | Shows |
 | --- | --- | --- |
@@ -31,16 +49,18 @@ On a **Stream Deck +**:
 
 Where Sona can't do something (Suggest Less without an Apple Music account, nothing playing), the key shows Stream Deck's alert. While Sona isn't running the keys are dimmed. They come back on their own once it starts.
 
-## Requirements
-
-- **Sona with `sona connect`.** Check with `sona help connect`.
-- **Stream Deck 7.1** or newer, on macOS 12+ or Windows 10+.
+</details>
 
 ## Install
+
+Needs **Sona with `sona connect`** (check with `sona help connect`) and **Stream Deck 7.1** or newer, on macOS 12+ or Windows 10+.
 
 1. Download `uk.coredev.sona.streamDeckPlugin` from the [releases](https://github.com/coredev-uk/sona-streamdeck/releases).
 2. Open it. Stream Deck installs it.
 3. Drag the actions from **Sona** in the action list onto your keys.
+
+<details>
+<summary>Finding Sona, and how the plugin talks to it</summary>
 
 The plugin starts `sona connect` and keeps it running. It finds `sona` on its own:
 - **macOS:** `/Applications/Sona.app` or `~/Applications/Sona.app`, or `sona` on your PATH.
@@ -48,13 +68,18 @@ The plugin starts `sona connect` and keeps it running. It finds `sona` on its ow
 
 If it can't, any action's settings say so, and **Where Sona is** takes the full path to `sona` (`sona.exe` on Windows).
 
-## How it talks to Sona
-
-The plugin runs one `sona connect`. That process speaks Sona's add-on protocol on its standard input and output ([Sona's add-on reference](https://github.com/coredev-uk/sona-go/blob/main/docs/addons.md)), and reaches the running Sona the way the `sona` command line does: over D-Bus on Linux, and over a socket on macOS and Windows that only your user can reach.
+That one `sona connect` process speaks Sona's add-on protocol on its standard input and output ([Sona's add-on reference](https://github.com/coredev-uk/sona-go/blob/main/docs/addons.md)), and reaches the running Sona the way the `sona` command line does: over D-Bus on Linux, and over a socket on macOS and Windows that only your user can reach.
 
 The plugin opens no network port and needs no pairing. It only downloads album covers, and only from Apple's artwork CDN.
 
-## Develop
+</details>
+
+## Contributing
+
+Report bugs and request actions with [Issues](https://github.com/coredev-uk/sona-streamdeck/issues).
+
+<details>
+<summary>Building and testing the plugin</summary>
 
 Node.js 24 (as the Stream Deck app runs it).
 
@@ -77,6 +102,10 @@ npm run build && node scripts/smoke.ts [-sona /path/to/sona] [-sheet /tmp/deck]
 
 With a Stream Deck: `npx streamdeck link uk.coredev.sona.sdPlugin`, then `npm run watch`.
 
-## License
+</details>
 
-AGPL-3.0, as Sona. `ui/sdpi-components.js` is [sdpi-components](https://sdpi-components.dev) (MIT, its licence beside it).
+## Licence
+
+Sona for Stream Deck is licensed under the GNU Affero General Public License v3.0, as Sona ([LICENSE](LICENSE)).
+`ui/sdpi-components.js` is [sdpi-components](https://sdpi-components.dev) (MIT, its licence beside it).
+It is not affiliated with Apple or Elgato.
