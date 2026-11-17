@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="sdpi-components.js"></script>
+	<link rel="stylesheet" href="sona.css">
+</head>
+<body>
+	<sdpi-item label="Sona">
+		<p id="sona-connection" class="sona-status">Connecting…</p>
+	</sdpi-item>
+	<details class="sona-advanced">
+		<summary>Where Sona is</summary>
+		<sdpi-item label="sona">
+			<sdpi-textfield global setting="sonaPath" placeholder="Found on its own"></sdpi-textfield>
+		</sdpi-item>
+		<p class="sona-hint">Only when Sona isn't installed where its installer puts it, or on your PATH: the full path to <code>sona</code> (<code>sona.exe</code> on Windows).</p>
+	</details>
+	<script src="connection.js"></script>
+</body>
+</html>

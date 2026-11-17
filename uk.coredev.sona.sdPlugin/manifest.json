@@ -1,0 +1,370 @@
+{
+	"$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+	"Name": "Sona",
+	"UUID": "uk.coredev.sona",
+	"Version": "0.1.0.0",
+	"Author": "coredev",
+	"Description": "Control Sona, the Apple Music desktop client: playback, the queue, favourites, your library, Spatial Audio and more, with the song and its cover on your keys and Stream Deck + dials.",
+	"URL": "https://sona.coredev.uk",
+	"SupportURL": "https://github.com/coredev-uk/sona-streamdeck/issues",
+	"Category": "Sona",
+	"CategoryIcon": "imgs/plugin/category",
+	"Icon": "imgs/plugin/icon",
+	"CodePath": "bin/plugin.js",
+	"SDKVersion": 3,
+	"Nodejs": {
+		"Version": "24"
+	},
+	"Software": {
+		"MinimumVersion": "7.1"
+	},
+	"OS": [
+		{
+			"Platform": "mac",
+			"MinimumVersion": "12"
+		},
+		{
+			"Platform": "windows",
+			"MinimumVersion": "10"
+		}
+	],
+	"Actions": [
+		{
+			"Name": "Play/Pause",
+			"UUID": "uk.coredev.sona.toggle",
+			"Icon": "imgs/actions/toggle",
+			"Tooltip": "Plays or pauses Sona.",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/connection.html",
+			"States": [
+				{
+					"Image": "imgs/keys/toggle"
+				}
+			],
+			"SupportedInMultiActions": true
+		},
+		{
+			"Name": "Next",
+			"UUID": "uk.coredev.sona.next",
+			"Icon": "imgs/actions/next",
+			"Tooltip": "Skips to the next song.",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/connection.html",
+			"States": [
+				{
+					"Image": "imgs/keys/next"
+				}
+			],
+			"SupportedInMultiActions": true
+		},
+		{
+			"Name": "Previous",
+			"UUID": "uk.coredev.sona.previous",
+			"Icon": "imgs/actions/previous",
+			"Tooltip": "Goes back to the previous song, or restarts this one in its first seconds.",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/previous.html",
+			"States": [
+				{
+					"Image": "imgs/keys/previous"
+				}
+			],
+			"SupportedInMultiActions": true
+		},
+		{
+			"Name": "Shuffle",
+			"UUID": "uk.coredev.sona.shuffle",
+			"Icon": "imgs/actions/shuffle",
+			"Tooltip": "Turns shuffle on or off; lights up while it is on.",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/connection.html",
+			"States": [
+				{
+					"Image": "imgs/keys/shuffle"
+				}
+			],
+			"SupportedInMultiActions": true
+		},
+		{
+			"Name": "Repeat",
+			"UUID": "uk.coredev.sona.repeat",
+			"Icon": "imgs/actions/repeat",
+			"Tooltip": "Moves repeat on: off, all, one.",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/connection.html",
+			"States": [
+				{
+					"Image": "imgs/keys/repeat"
+				}
+			],
+			"SupportedInMultiActions": true
+		},
+		{
+			"Name": "Favourite",
+			"UUID": "uk.coredev.sona.like",
+			"Icon": "imgs/actions/like",
+			"Tooltip": "Favourites the playing song, or takes it back.",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/connection.html",
+			"States": [
+				{
+					"Image": "imgs/keys/like"
+				}
+			],
+			"SupportedInMultiActions": true
+		},
+		{
+			"Name": "Suggest Less",
+			"UUID": "uk.coredev.sona.dislike",
+			"Icon": "imgs/actions/dislike",
+			"Tooltip": "Rates the playing song Suggest Less, or takes it back.",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/connection.html",
+			"States": [
+				{
+					"Image": "imgs/keys/dislike"
+				}
+			],
+			"SupportedInMultiActions": true
+		},
+		{
+			"Name": "Add to Library",
+			"UUID": "uk.coredev.sona.library",
+			"Icon": "imgs/actions/library",
+			"Tooltip": "Adds the playing song to your library, or removes it.",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/connection.html",
+			"States": [
+				{
+					"Image": "imgs/keys/library"
+				}
+			],
+			"SupportedInMultiActions": true
+		},
+		{
+			"Name": "Crossfade",
+			"UUID": "uk.coredev.sona.crossfade",
+			"Icon": "imgs/actions/crossfade",
+			"Tooltip": "Turns crossfade between songs on or off.",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/connection.html",
+			"States": [
+				{
+					"Image": "imgs/keys/crossfade"
+				}
+			],
+			"SupportedInMultiActions": true
+		},
+		{
+			"Name": "Spatial Audio",
+			"UUID": "uk.coredev.sona.spatial",
+			"Icon": "imgs/actions/spatial",
+			"Tooltip": "Turns Spatial Audio on or off, from the next song.",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/connection.html",
+			"States": [
+				{
+					"Image": "imgs/keys/spatial"
+				}
+			],
+			"SupportedInMultiActions": true
+		},
+		{
+			"Name": "Private Listening",
+			"UUID": "uk.coredev.sona.private",
+			"Icon": "imgs/actions/private",
+			"Tooltip": "Turns private listening on or off.",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/connection.html",
+			"States": [
+				{
+					"Image": "imgs/keys/private"
+				}
+			],
+			"SupportedInMultiActions": true
+		},
+		{
+			"Name": "Volume Up",
+			"UUID": "uk.coredev.sona.volume-up",
+			"Icon": "imgs/actions/volume-up",
+			"Tooltip": "Raises Sona's volume; hold to keep going.",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/volume.html",
+			"States": [
+				{
+					"Image": "imgs/keys/volume-up"
+				}
+			],
+			"SupportedInMultiActions": true
+		},
+		{
+			"Name": "Volume Down",
+			"UUID": "uk.coredev.sona.volume-down",
+			"Icon": "imgs/actions/volume-down",
+			"Tooltip": "Lowers Sona's volume; hold to keep going.",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/volume.html",
+			"States": [
+				{
+					"Image": "imgs/keys/volume-down"
+				}
+			],
+			"SupportedInMultiActions": true
+		},
+		{
+			"Name": "Clear Queue",
+			"UUID": "uk.coredev.sona.clear-queue",
+			"Icon": "imgs/actions/clear-queue",
+			"Tooltip": "Clears the queue but the playing song: press, then press again to confirm.",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/connection.html",
+			"States": [
+				{
+					"Image": "imgs/keys/clear-queue"
+				}
+			],
+			"SupportedInMultiActions": true
+		},
+		{
+			"Name": "Now Playing",
+			"UUID": "uk.coredev.sona.now-playing",
+			"Icon": "imgs/actions/now-playing",
+			"Tooltip": "Shows the playing song; press to play or pause.",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/connection.html",
+			"States": [
+				{
+					"Image": "imgs/keys/now-playing"
+				}
+			],
+			"SupportedInMultiActions": false,
+			"UserTitleEnabled": false
+		},
+		{
+			"Name": "Album Art",
+			"UUID": "uk.coredev.sona.artwork",
+			"Icon": "imgs/actions/artwork",
+			"Tooltip": "Shows the playing song's cover; press to play or pause.",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/connection.html",
+			"States": [
+				{
+					"Image": "imgs/keys/artwork"
+				}
+			],
+			"SupportedInMultiActions": false,
+			"UserTitleEnabled": false
+		},
+		{
+			"Name": "Album Art Grid",
+			"UUID": "uk.coredev.sona.artwork-grid",
+			"Icon": "imgs/actions/artwork-grid",
+			"Tooltip": "Spreads the cover over a block of keys: place one per key and set its place.",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/grid.html",
+			"States": [
+				{
+					"Image": "imgs/keys/artwork-grid"
+				}
+			],
+			"SupportedInMultiActions": false,
+			"UserTitleEnabled": false
+		},
+		{
+			"Name": "Play Collection",
+			"UUID": "uk.coredev.sona.pinned",
+			"Icon": "imgs/actions/pinned",
+			"Tooltip": "Plays a playlist, album or station of your choice.",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/pinned.html",
+			"States": [
+				{
+					"Image": "imgs/keys/pinned"
+				}
+			],
+			"SupportedInMultiActions": true
+		},
+		{
+			"Name": "Player Dial",
+			"UUID": "uk.coredev.sona.playback-dial",
+			"Icon": "imgs/actions/playback-dial",
+			"Tooltip": "Volume or position on a dial; tap the screen to play, pause or skip.",
+			"Controllers": [
+				"Encoder"
+			],
+			"PropertyInspectorPath": "ui/playback-dial.html",
+			"States": [
+				{
+					"Image": "imgs/keys/playback-dial"
+				}
+			],
+			"Encoder": {
+				"layout": "$B1",
+				"TriggerDescription": {
+					"Rotate": "Volume, or position after a press",
+					"Push": "Switch between volume and position",
+					"Touch": "Play or pause; left edge goes back, right edge skips"
+				}
+			}
+		},
+		{
+			"Name": "Queue Dial",
+			"UUID": "uk.coredev.sona.queue-dial",
+			"Icon": "imgs/actions/queue-dial",
+			"Tooltip": "Browse the queue on a dial and play a song from it.",
+			"Controllers": [
+				"Encoder"
+			],
+			"PropertyInspectorPath": "ui/connection.html",
+			"States": [
+				{
+					"Image": "imgs/keys/queue-dial"
+				}
+			],
+			"Encoder": {
+				"layout": "$B1",
+				"TriggerDescription": {
+					"Rotate": "Browse the queue",
+					"Push": "Play the song shown",
+					"Touch": "Play the song shown"
+				}
+			}
+		}
+	]
+}

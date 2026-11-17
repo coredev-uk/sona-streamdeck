@@ -1,0 +1,22 @@
+.sona-status {
+	margin: 0;
+	color: #c9c6bf;
+}
+
+.sona-status.sona-online {
+	color: #f0b43c;
+}
+
+.sona-hint {
+	margin: 4px 0 8px 0;
+	padding: 0 16px;
+	color: #9a9893;
+	font-size: 9pt;
+	line-height: 1.4;
+}
+
+.sona-advanced summary {
+	padding: 6px 16px;
+	color: #c9c6bf;
+	cursor: pointer;
+}

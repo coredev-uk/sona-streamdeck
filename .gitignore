@@ -1,0 +1,5 @@
+node_modules/
+dist/
+uk.coredev.sona.sdPlugin/bin/
+uk.coredev.sona.sdPlugin/logs/
+*.streamDeckPlugin
